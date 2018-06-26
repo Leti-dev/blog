@@ -1,0 +1,56 @@
+/* ---------------- Global ----------------- */
+
+*{box-sizing: border-box;}
+
+html{font-size: 62.5%;}
+
+:root{
+	--brown: #2F2933;
+	--blue: #01A2A6;
+}
+
+body{
+    margin: 0 auto;
+    background: url('../img/paper.png') repeat;
+    font-family: 'Dosis', sans-serif;
+    font-size: 2rem;
+    color: var(--brown);
+}
+
+.container{
+	width: 80%;
+	margin: 0 auto;
+}
+
+/* ---------------- Header ----------------- */
+
+header{
+	background-color: var(--brown);
+	padding: 5%;
+	border-bottom: 5px solid var(--blue);
+}
+
+nav{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+}
+
+a{
+	text-decoration: none;
+	color: var(--blue);
+}
+
+#title{
+	font-size: 4rem;
+	text-transform: uppercase;
+}
+
+
+/* ----------------- Body ------------------ */
+
+h1{
+	font-size: 3rem;
+	color: var(--blue);
+}
