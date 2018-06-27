@@ -5,8 +5,9 @@
 html{font-size: 62.5%;}
 
 :root{
-	--brown: #2F2933;
-	--blue: #01A2A6;
+	--darkGray: #3d3c3c;
+	--green: #088e01;
+	--darkGreen: #046000;
 }
 
 body{
@@ -14,7 +15,7 @@ body{
     background: url('../img/paper.png') repeat;
     font-family: 'Dosis', sans-serif;
     font-size: 2rem;
-    color: var(--brown);
+    color: var(--darkGray);
 }
 
 .container{
@@ -25,9 +26,9 @@ body{
 /* ---------------- Header ----------------- */
 
 header{
-	background-color: var(--brown);
+	background: url('https://i.pinimg.com/originals/14/31/10/1431101665b067ffc08018b945fe30ef.jpg') repeat;
 	padding: 5%;
-	border-bottom: 5px solid var(--blue);
+	border-bottom: 5px solid var(--green);
 }
 
 nav{
@@ -39,7 +40,11 @@ nav{
 
 a{
 	text-decoration: none;
-	color: var(--blue);
+	color: var(--green);
+}
+
+h1,h2 a{
+	color: var(--darkGreen);
 }
 
 #title{
@@ -50,7 +55,90 @@ a{
 
 /* ----------------- Body ------------------ */
 
+main{
+	padding: 5% 0;
+}
+
 h1{
 	font-size: 3rem;
-	color: var(--blue);
+}
+
+/* ---------- articles display ------------ */
+
+.articleList{
+	list-style-type: none;
+}
+
+.articleList h3{
+	font-family: 'IM Fell English SC', serif;
+	font-size: 2rem;
+}
+
+.articleList article{
+	font-family: 'Spirax', cursive;
+	padding-bottom: 1%;
+	font-size: 1.8rem;
+}
+
+.articleList small{
+	font-size: 1.3rem;
+}
+
+/* ----------- comments display ------------ */
+
+#comments{
+	border-bottom: 1px solid var(--darkGray);
+	border-top: 1px solid var(--darkGray);
+	padding: 1% 0 3% 1%;
+	margin-top: 5%;
+	list-style-type: none;
+}
+
+form fieldset{
+	border-radius: 4px;
+	border-color: var(--darkGreen); 
+	color: var(--darkGreen);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	max-width: 50%;
+	padding: 3%;
+	margin: 0 auto;
+}
+
+form input, textarea{
+	margin-bottom: 5%;
+}
+
+form div{
+	display: flex;
+	flex-direction: row;
+	flex: 1;
+	justify-content: center;
+}
+
+#save-contact, #reset-form{
+	width: 25%;
+	margin: 5%;
+	color: white;
+	border-radius: 4px;
+	padding: 2%;
+}
+
+#save-contact{
+	background-color: var(--darkGreen);
+}
+
+#reset-form{
+	background-color: darkred;
+}
+
+/* ---------------- Footer ----------------- */
+
+footer{
+	background: url('https://i.pinimg.com/originals/14/31/10/1431101665b067ffc08018b945fe30ef.jpg') repeat;
+	padding: 2%;
+	border-top: 5px solid var(--green);
+	text-align: center;
+	color: var(--green);
 }

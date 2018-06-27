@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  localhost
--- Généré le :  Mar 26 Juin 2018 à 15:33
+-- Généré le :  Mer 27 Juin 2018 à 16:22
 -- Version du serveur :  5.7.22-0ubuntu0.16.04.1
 -- Version de PHP :  7.0.30-0ubuntu0.16.04.1
 
@@ -108,6 +108,15 @@ CREATE TABLE `comments` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
+-- Contenu de la table `comments`
+--
+
+INSERT INTO `comments` (`id`, `username`, `content`, `creationDate`, `idArticle`) VALUES
+(2, 'Hélène', 'Trop bien comme jeu, enfin un jeu de plateforme qui me plaît et qui me fait renouer avec ce style. Et quelle musique !', '2018-06-27 09:46:28', 1),
+(3, 'Juliette', 'Je l\'ai fini en 2 jours tellement je suis rentrée dans l\'univers de cette petite boule de poils.', '2018-06-27 11:49:44', 1),
+(4, 'Romain', 'Regarde d\'autres languages avant de dire que le JS est le meilleur language du monde ;)', '2018-06-27 15:58:18', 2);
+
+--
 -- Index pour les tables exportées
 --
 
@@ -161,7 +170,7 @@ ALTER TABLE `category`
 -- AUTO_INCREMENT pour la table `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `id` smallint(5) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` smallint(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- Contraintes pour les tables exportées
 --

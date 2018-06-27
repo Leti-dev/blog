@@ -1,0 +1,33 @@
+<h1><i class="fas fa-file-alt"></i> <?php echo $article['title'] ?></h1>
+
+<section class="articleList">
+    <article><?php echo $article['content']; ?></article>
+    <small><?php echo "Rédigé par " . ($article['name'] . " le " . $article['creationDate']); ?></small>
+</section>
+
+<ul id="comments">
+	<?php foreach ($comments as $comment){ ?>
+    <li><h3><i class="fas fa-comments"></i> Rédigé par <?php echo $comment['username']; ?></h3>
+        <article><?php echo $comment['content']; ?></article>
+    </li>
+    <?php } ?>
+</ul>
+
+<form method="POST" action="addComment.php?idArticle=<?php echo $_GET['idArticle']; ?>">
+	<fieldset>
+		<legend><i class="fas fa-comment"></i> Ajouter un commentaire</legend>
+
+	<label for="username">Pseudo :</label>
+    <input id="username" type="text" name="username">
+
+    <label for="comment">Commentaire :</label>
+    <textarea id="comment" name="comment"></textarea>
+
+    <div>
+    	<input type="submit" id="save-contact" value="Ajouter">
+    	<input type="reset" id="reset-form" value="Annuler">
+    </div>
+    
+	</fieldset>
+
+</form>
