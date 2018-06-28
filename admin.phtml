@@ -1,0 +1,31 @@
+<h1><i class="fas fa-cogs"></i> Administration</h1>
+
+<section>
+    <a href="addArticle.php"><i class="fas fa-newspaper"></i> Rédiger un nouvel article</a>
+</section>
+
+<table>
+    <caption>Liste des articles</caption>
+    <thead>
+        <tr>
+            <th>Titre</th>
+            <th>Contenu</th>
+            <th>Auteur</th>
+            <th>Date</th>
+            <th>Modifier</th>
+            <th>Supprimer</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <?php foreach ($allArticles as $article) { ?>
+            <td><a href="showArticle.php"></a><?php echo $article['title']; ?></td>
+            <td><?php echo $article['content']; ?></td>
+            <td><?php echo $article['name']; ?></td>
+            <td><?php echo substr($article['creationDate'], 0, 10); ?></td>
+            <td><a href="updateArticle.php"><i class="fas fa-pencil-alt"></i></a></td> <!-- same form for update or add article -->
+            <td><a href="deleteArticle.php"><i class="fas fa-trash"></i></a></td>
+        </tr>
+        <?php } ?>
+    </tbody>
+</table>

@@ -6,28 +6,28 @@
 </section>
 
 <ul id="comments">
-	<?php foreach ($comments as $comment){ ?>
-    <li><h3><i class="fas fa-comments"></i> Rédigé par <?php echo $comment['username']; ?></h3>
-        <article><?php echo $comment['content']; ?></article>
-    </li>
+    <?php foreach ($comments as $comment) { ?>
+        <li><h3><i class="fas fa-comments"></i> Rédigé par <?php echo $comment['username']; ?></h3>
+            <article><?php echo $comment['content']; ?></article>
+        </li>
     <?php } ?>
 </ul>
 
 <form method="POST" action="addComment.php?idArticle=<?php echo $_GET['idArticle']; ?>">
-	<fieldset>
-		<legend><i class="fas fa-comment"></i> Ajouter un commentaire</legend>
+    <fieldset>
+        <legend><i class="fas fa-comment"></i> Ajouter un commentaire</legend>
 
-	<label for="username">Pseudo :</label>
-    <input id="username" type="text" name="username">
+        <label for="username">Pseudo :</label>
+        <input id="username" type="text" name="username">
 
-    <label for="comment">Commentaire :</label>
-    <textarea id="comment" name="comment"></textarea>
+        <label for="comment">Commentaire :</label>
+        <textarea id="comment" name="comment"></textarea>
 
-    <div>
-    	<input type="submit" id="save-contact" value="Ajouter">
-    	<input type="reset" id="reset-form" value="Annuler">
-    </div>
-    
-	</fieldset>
+        <div>
+            <input type="submit" id="save-contact" value="Ajouter">
+            <input type="reset" id="reset-form" value="Annuler">
+        </div>
+
+    </fieldset>
 
 </form>

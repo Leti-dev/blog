@@ -1,0 +1,32 @@
+<h1><i class="fas fa-cogs"></i> Administration</h1>
+
+<form method="POST" action="addArticle.php">
+    <fieldset>
+        <legend><i class="fas fa-newspaper"></i> Ajouter un article</legend>
+
+        <label for="title">Titre :</label>
+        <input id="title" type="text" name="title">
+
+        <label for="content">Contenu de l'article :</label>
+        <textarea id="content" name="content"></textarea>
+        
+        <select name="idCategory" size="1">
+            <?php foreach ($categories as $category) { ?>
+            <option value="<?php echo $category['id']; ?>"><?php echo $category['label']; ?></option>
+            <?php } ?>
+        </select>
+        
+        <select>
+            <?php foreach ($authors as $author) { ?>
+            <option value="<?php echo $author['id']; ?>"><?php echo $author['name']; ?></option>
+            <?php } ?>
+        </select>
+        
+        <div>
+            <input type="submit" id="save-contact" value="Ajouter">
+            <input type="reset" id="reset-form" value="Annuler">
+        </div>
+
+    </fieldset>
+
+</form>

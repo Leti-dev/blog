@@ -1,21 +1,23 @@
 <h1><i class="fas fa-home"></i> Accueil</h1>
 
 <ul class="articleList">
-    <?php foreach ($allArticles as $article){ ?>
-    <li><h2><a href="showArticle.php?idArticle=<?php echo $article['id']; ?>">
-        <?php echo $article['title']; ?></a>
-    </h2>
-        <article>
-        	<?php if($allArticles){
-        			if(strlen($article['content']) > 50){
-						echo ($content = substr(htmlspecialchars($article['content']), 0, strpos($article['content'], " ", 50)) . " [...]");
-        		  	}else{
-        		  		echo htmlspecialchars($article['content']);
-        			}
-        		  }else{
-        		  	echo "Pas encore d'article :/";
-        		  } ?></article>
-        <small><?php echo "Rédigé par " . ($article['name'] . " le " . $article['creationDate']); ?></small>
-    </li>
+    <?php foreach ($allArticles as $article) { ?>
+        <li><h2><a href="showArticle.php?idArticle=<?php echo $article['id']; ?>">
+                    <?php echo $article['title']; ?></a>
+            </h2>
+            <article>
+                <?php
+                if ($allArticles) {
+                    if (strlen($article['content']) > 50) {
+                        echo ($content = substr(htmlspecialchars($article['content']), 0, strpos($article['content'], " ", 50)) . " [...]");
+                    } else {
+                        echo htmlspecialchars($article['content']);
+                    }
+                } else {
+                    echo "Pas encore d'article :/";
+                }
+                ?></article>
+            <small><?php echo "Rédigé par " . ($article['name'] . " le " . $article['creationDate']); ?></small>
+        </li>
     <?php } ?>
 </ul>

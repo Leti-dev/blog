@@ -10,14 +10,12 @@ if(array_key_exists('username', $_POST) && array_key_exists('comment', $_POST) &
 		  VALUES (?, ?, ?)';
 
 		$requete = $db->prepare($query);
-		$requete->execute(array($_POST['username'], $_POST['comment'], $_GET['idArticle']);
+		$requete->execute(array($_POST['username'], $_POST['comment'], $_GET['idArticle']));
 
-		$template = "addComment";
 
 }
 
-
-
-//include "../masterPage.phtml";
+header('Location: showArticle.php?idArticle=' . $_GET['idArticle']);
+exit();
 
 ?>

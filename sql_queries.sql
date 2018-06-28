@@ -19,3 +19,9 @@ INNER JOIN author ON articles.idAuthor = author.id
 INNER JOIN comments ON articles.id = comments.idArticle
 ORDER BY comments.creationDate DESC
 
+-- Affichage du détails des articles administration
+
+SELECT a.id, title, content, au.name, creationDate
+FROM articles a
+INNER JOIN author au ON a.idAuthor = au.id
+ORDER BY creationDate
