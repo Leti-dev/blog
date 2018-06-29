@@ -47,7 +47,7 @@ h1,h2 a{
 	color: var(--darkGreen);
 }
 
-#title{
+#logo{
 	font-size: 4rem;
 	text-transform: uppercase;
 }
@@ -117,7 +117,7 @@ form div{
 	justify-content: center;
 }
 
-#save-contact, #reset-form{
+#save-comment, #reset-form, #save-article{
 	width: 25%;
 	margin: 5%;
 	color: white;
@@ -125,12 +125,31 @@ form div{
 	padding: 2%;
 }
 
-#save-contact{
+#save-comment, #save-article{
 	background-color: var(--darkGreen);
 }
 
 #reset-form{
 	background-color: darkred;
+}
+
+/* ------------ Administration ------------- */
+
+table{
+	margin: 5% 0;
+}
+
+table caption{
+	padding: 10px 0;
+	font-size: 3rem;
+}
+
+table tr{
+	text-align: center;
+}
+
+table td{
+	padding: 5px 15px;
 }
 
 /* ---------------- Footer ----------------- */

@@ -3,7 +3,7 @@
 <ul class="articleList">
     <?php foreach ($allArticles as $article) { ?>
         <li><h2><a href="showArticle.php?idArticle=<?php echo $article['id']; ?>">
-                    <?php echo $article['title']; ?></a>
+                    <?php echo htmlspecialchars($article['title']); ?></a>
             </h2>
             <article>
                 <?php
@@ -17,7 +17,7 @@
                     echo "Pas encore d'article :/";
                 }
                 ?></article>
-            <small><?php echo "Rédigé par " . ($article['name'] . " le " . $article['creationDate']); ?></small>
+            <small><?php echo "Rédigé par " . htmlspecialchars($article['name']) . " le " . htmlspecialchars(substr($article['creationDate'], 0, 10)); ?></small>
         </li>
     <?php } ?>
 </ul>

@@ -1,0 +1,40 @@
+<h1><i class="fas fa-cogs"></i> Administration</h1>
+
+<form method="POST" action="updateArticle.php?idArticle=<?php echo $_GET['idArticle']; ?>">
+    <fieldset>
+        <legend><i class="fas fa-newspaper"></i> Modifier un article</legend>
+
+        <label for="title">Titre :</label>
+        <input id="title" type="text" name="title" value="<?php echo ($article['title']); ?>">
+
+        <label for="content">Contenu de l'article :</label>
+        <textarea id="content" name="content"><?php echo ($article['content']); ?></textarea>
+        
+        <select name="idCategory" size="1">
+            <?php foreach ($categories as $category) { 
+                    if($article['idCategory'] == $category['id']){ ?>
+                        <option value="<?php echo $category['id']; ?>" selected><?php echo $category['label']; ?></option>            
+                    <?php }else{ ?>
+                        <option value="<?php echo $category['id']; ?>"><?php echo $category['label']; ?></option>
+                    <?php } ?>            
+            <?php } ?>
+        </select>
+        
+        <select name="idAuthor" size="1">
+            <?php foreach ($authors as $author) {
+                    if($article['idAuthor'] == $author['id']){ ?>
+                        <option value="<?php echo $author['id']; ?>" selected><?php echo $author['name']; ?></option>            
+                    <?php }else{ ?>
+                        <option value="<?php echo $author['id']; ?>"><?php echo $author['name']; ?></option>
+                    <?php } ?>
+            <?php } ?>
+        </select>
+        
+        <div>
+            <input type="submit" id="save-article" value="Modifier">
+            <input type="reset" id="reset-form" value="Annuler" onclick="location='index.php'">
+        </div>
+
+    </fieldset>
+
+</form>

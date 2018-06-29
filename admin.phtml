@@ -1,7 +1,7 @@
 <h1><i class="fas fa-cogs"></i> Administration</h1>
 
 <section>
-    <a href="addArticle.php"><i class="fas fa-newspaper"></i> Rédiger un nouvel article</a>
+    <a href="addArticle.php"><i class="fas fa-newspaper"></i> R&eacute;diger un nouvel article</a>
 </section>
 
 <table>
@@ -19,12 +19,16 @@
     <tbody>
         <tr>
             <?php foreach ($allArticles as $article) { ?>
-            <td><a href="showArticle.php"></a><?php echo $article['title']; ?></td>
-            <td><?php echo $article['content']; ?></td>
-            <td><?php echo $article['name']; ?></td>
-            <td><?php echo substr($article['creationDate'], 0, 10); ?></td>
-            <td><a href="updateArticle.php"><i class="fas fa-pencil-alt"></i></a></td> <!-- same form for update or add article -->
-            <td><a href="deleteArticle.php"><i class="fas fa-trash"></i></a></td>
+            <td><a href="showArticle.php?idArticle=<?php echo $article['id']; ?>"><?php echo htmlspecialchars($article['title']); ?></a></td>
+            <td><?php if (strlen($article['content']) > 50) {
+                        echo ($content = substr(htmlspecialchars($article['content']), 0, strpos($article['content'], " ", 40)) . " [...]");
+                    } else {
+                        echo htmlspecialchars($article['content']);
+                    } ?></td>
+            <td><?php echo htmlspecialchars($article['name']); ?></td>
+            <td><?php echo htmlspecialchars(substr($article['creationDate'], 0, 10)); ?></td>
+            <td><a href="updateArticle.php?idArticle=<?php echo $article['id']; ?>"><i class="fas fa-pencil-alt"></i></a></td>
+            <td><a href="deleteArticle.php?idArticle=<?php echo $article['id']; ?>"><i class="fas fa-trash"></i></a></td>
         </tr>
         <?php } ?>
     </tbody>

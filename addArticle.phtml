@@ -12,18 +12,18 @@
         
         <select name="idCategory" size="1">
             <?php foreach ($categories as $category) { ?>
-            <option value="<?php echo $category['id']; ?>"><?php echo $category['label']; ?></option>
+            <option value="<?php echo $category['id']; ?>"><?php echo htmlspecialchars($category['label']); ?></option>
             <?php } ?>
         </select>
         
-        <select>
+        <select name="idAuthor" size="1">
             <?php foreach ($authors as $author) { ?>
-            <option value="<?php echo $author['id']; ?>"><?php echo $author['name']; ?></option>
+            <option value="<?php echo $author['id']; ?>"><?php echo htmlspecialchars($author['name']); ?></option>
             <?php } ?>
         </select>
         
         <div>
-            <input type="submit" id="save-contact" value="Ajouter">
+            <input type="submit" id="save-comment" value="Ajouter">
             <input type="reset" id="reset-form" value="Annuler">
         </div>
 
